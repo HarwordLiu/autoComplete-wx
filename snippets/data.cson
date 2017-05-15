@@ -3,7 +3,7 @@
     'prefix': 'wxgetStorage'
     'body': '''
     wx.getStorage({
-      key: '${1: String}',
+      key: '${1:String}',
       success: function(res){
         $2// success
       },
@@ -19,7 +19,7 @@
     'prefix': 'wxgetStorageSync'
     'body': '''
     try {
-      var value = wx.getStorageSync('${1: String}')
+      var value = wx.getStorageSync('${1:String}')
       if (value) {
         // Do something with return value
       }
@@ -31,7 +31,7 @@
     'prefix': 'wxsetStorageSync'
     'body': '''
     try {
-      wx.setStorageSync('${1: String}', '${2: String/Object}')
+      wx.setStorageSync('${1:String}', '${2:String/Object}')
     } catch (e) {
 
     }
@@ -40,16 +40,16 @@
     'prefix': 'wxsetStorage'
     'body': '''
     wx.setStorage({
-      key: '${1: String}',
-      data: Object/String,
+      key: '${1:String}',
+      data: ${2:Object/String},
       success: function(res){
-        $2// success
+        $3// success
       },
       fail: function() {
-        $3// fail
+        $4// fail
       },
       complete: function() {
-        $4// complete
+        $5// complete
       }
     })
     '''
@@ -84,7 +84,7 @@
     'prefix': 'wxremoveStorage'
     'body': '''
     wx.removeStorage({
-      key: '${1: String}',
+      key: '${1:String}',
       success: function(res){
         $2// success
       },
@@ -100,7 +100,7 @@
     'prefix': 'wxremoveStorageSync'
     'body': '''
     try {
-      wx.removeStorageSync('${1: String}')
+      wx.removeStorageSync('${1:String}')
     } catch (e) {
 
     }
@@ -109,7 +109,7 @@
     'prefix': 'wxclearStorage'
     'body': '''
     wx.clearStorage({
-      key: '${1: String}',
+      key: '${1:String}',
       success: function(res){
         $2// success
       },
@@ -125,7 +125,7 @@
     'prefix': 'wxclearStorageSync'
     'body': '''
     try {
-      wx.clearStorageSync('${1: String}')
+      wx.clearStorageSync('${1:String}')
     } catch (e) {
 
     }

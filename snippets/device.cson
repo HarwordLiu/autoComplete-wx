@@ -5,10 +5,19 @@
     wx.getNetworkType({
       success: function(res) {
         $1// success
+        var networkType = res.networkType
       }
     })
     '''
-  '异步获取系统信息': 
+  '监听网络状态变化':
+    'prefix': 'wxonNetworkStatusChange'
+    'body': '''
+    wx.onNetworkStatusChange(function(res) {
+      console.log(res.isConnected)
+      console.log(res.networkType)
+    })
+    '''
+  '异步获取系统信息':
     'prefix': 'wxgetSystemInfo'
     'body': '''
     wx.getSystemInfo({
@@ -20,17 +29,108 @@
   '同步获取系统信息':
     'prefix': 'wxgetSystemInfoSync'
     'body': 'wx.getSystemInfoSync()'
-  '监听重力感应数据':
+  '监听加速度数据':
     'prefix': 'wxonAccelerometerChange'
     'body': '''
-    wx.onAccelerometerChange(function(res){
+    wx.onAccelerometerChange( function(res) {
       $1// callback
+      console.log(res.x)
+      console.log(res.y)
+      console.log(res.z)
     })
+    '''
+  '开始监听加速度数据':
+    'prefix': 'wxstartAccelerometer'
+    'body': '''
+    wx.startAccelerometer()
+    '''
+  '结束监听加速度数据':
+    'prefix': 'wxstopAccelerometer'
+    'body': '''
+    wx.stopAccelerometer()
+    '''
+  '判断小程序API在当前版本是否可用':
+    'prefix': 'wxcanIUse'
+    'body': '''
+    wx.canIUse('${1:component}.${2:attribute}.${3:option}') // 例如wx.canIUse('showToast.object.image')
     '''
   '监听罗盘数据':
     'prefix': 'wxonCompassChange'
     'body': '''
     wx.onCompassChange(function(res){
       $1// callback
+    })
+    '''
+  '开始监听罗盘数据':
+    'prefix': 'wxstartCompass'
+    'body': '''
+    wx.startCompass()
+    '''
+  '结束监听罗盘数据':
+    'prefix': 'wxstopCompass'
+    'body': '''
+    wx.stopCompass()
+    '''
+  '拨打电话':
+    'prefix': 'wxmakePhoneCall'
+    'body': '''
+    wx.makePhoneCall({
+      phoneNumber: '${1:String}'
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '扫码':
+    'prefix': 'wxscanCode'
+    'body': '''
+    wx.scanCode({
+      success: function(res) {
+        $1// success
+        console.log(res)
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '设置系统剪贴板的内容':
+    'prefix': 'wxsetClipboardData'
+    'body': '''
+    wx.setClipboardData({
+      data: '${1:String}',
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取系统剪贴板的内容':
+    'prefix': 'wxgetClipboardData'
+    'body': '''
+    wx.getClipboardData({
+      success: function() {
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
     })
     '''

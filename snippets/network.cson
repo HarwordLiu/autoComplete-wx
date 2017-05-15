@@ -3,11 +3,11 @@
     'prefix': 'wxrequest'
     'body': '''
     wx.request({
-      url: 'https://${1: URL}',
+      url: 'https://${1:URL}',
       // data: {},
       // header: {}, // 设置请求的 header , header 中不能设置 Referer
       // dataType: 'json', // 默认为 json。如果设置了 dataType 为 json，则会尝试对响应的数据做一次 JSON.parse
-      method: '${2: GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: '${2:GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         ${3}// success
       },
@@ -23,8 +23,8 @@
     'prefix': 'wxuploadFile'
     'body': '''
     wx.uploadFile({
-      url: 'https://${1: URL}',
-      filePath:'${2: String}',
+      url: 'https://${1:URL}',
+      filePath:'${2:String}',
       name:'${3: String}',
       // header: {}, // 设置请求的 header
       // formData: {}, // HTTP 请求中其他额外的 form data
@@ -43,7 +43,7 @@
     'prefix': 'wxdownloadFile'
     'body': '''
     wx.downloadFile({
-      url: "https://${1: URL}",
+      url: "https://${1:URL}",
       // type: 'image', // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
       // header: {}, // 设置请求的 header
       success: function(res){
@@ -61,10 +61,10 @@
     'prefix': 'wxconnectSocket'
     'body': '''
     wx.connectSocket({
-      url: 'wss://${1: String}',
-      data: {${2: Object}},
+      url: 'wss://${1:String}',
+      data: {${2:Object}},
       // header: {}, // 设置请求的 header
-      method: '${3: GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: '${3:GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         $4// success
       },
@@ -84,7 +84,7 @@
     })
     '''
   '监听 WebSocket 错误':
-    'prefix': 'wx.onSocketError'
+    'prefix': 'wxonSocketError'
     'body': '''
     wx.onSocketError(function() {
       $1// callback

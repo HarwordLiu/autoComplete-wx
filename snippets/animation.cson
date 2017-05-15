@@ -1,0 +1,25 @@
+'.source.js':
+  '动画':
+    'prefix': 'wxcreateAnimation'
+    'body': '''
+    wx.createAnimation({
+      duration: ${1:400},
+      timingFunction: '${2:linear}', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+      delay: ${3:0},
+      transformOrigin: '50% 50% 0',
+      success: function(res) {
+        $4//function code
+      }
+    })
+    '''
+  '创建绘图上下文':
+    'prefix': 'wxcreateContext'
+    'body': 'wx.createContext()'
+  '绘图':
+    'prefix': 'wxdrawCanvas'
+    'body': '''
+    wx.drawCanvas({
+      canvasId: '${1:String}',
+      actions: actions
+    })
+    '''

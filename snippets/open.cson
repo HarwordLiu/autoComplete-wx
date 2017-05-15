@@ -14,10 +14,26 @@
       }
     })
     '''
+  '检查登录是否有效':
+    'prefix': 'wxcheckSession'
+    'body': '''
+    wx.checkSession({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
   '获取用户信息':
     'prefix': 'wxgetUserInfo'
     'body': '''
     wx.getUserInfo({
+      // withCredentials: false, // 是否带上登录态信息
       success: function(res){
         $1// success
       },
@@ -46,6 +62,119 @@
       },
       complete: function() {
         $6// complete
+      }
+    })
+    '''
+  '设置页面支持分享':
+    'prefix': 'onShareAppMessage'
+    'body': '''
+    onShareAppMessage: function () {
+      return {
+        title: '${1:String}',
+        path: '${2:String}',
+        success: function(res) {
+          $3// 转发成功
+        },
+        fail: function(res) {
+          $4// 转发失败
+        }
+        complete: function() {
+          $6// complete
+        }
+      }
+    }
+    '''
+  '显示当前页面的转发按钮':
+    'prefix': 'wxshowShareMenu'
+    'body': '''
+    wx.showShareMenu({
+      // withShareTicket: false, // 是否使用带 shareTicket 的转发
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '隐藏转发按钮':
+    'prefix': 'wxhideShareMenu'
+    'body': '''
+    wx.hideShareMenu({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取转发详细信息':
+    'prefix': 'wxgetShareInfo'
+    'body': '''
+    wx.getShareInfo({
+      shareTicket: '${1:String}',
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '批量添加卡券':
+    'prefix': 'wxaddCard'
+    'body': '''
+    wx.addCard({
+      cardList: '${1:ObjectArray}', // 需要添加的卡券列表 { cardId: '', cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}' }
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+    '查看微信卡包中的卡券':
+      'prefix': 'wxopenCard'
+      'body': '''
+      wx.openCard({
+        cardList: '${1:ObjectArray}', // 需要添加的卡券列表 { cardId: '', cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}' }
+        success: function(res){
+          $2// success
+        },
+        fail: function() {
+          $3// fail
+        },
+        complete: function() {
+          $4// complete
+        }
+      })
+      '''
+  '调起客户端小程序设置界面':
+    'prefix': 'wxopenSetting'
+    'body': '''
+    wx.openSetting({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
       }
     })
     '''

@@ -3,7 +3,7 @@
     'prefix': 'wxgetLocation'
     'body': '''
     wx.getLocation({
-    type: '${1: wgs84}', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+    type: '${1:wgs84}', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
     success: function(res){
       $2// success
       var latitude = res.latitude
@@ -61,5 +61,5 @@
   '创建地图组件上下文':
     'prefix': 'wxcreateMapContext'
     'body': '''
-    wx.createMapContext('${1: mapID}')
+    wx.createMapContext('${1:mapID}')
     '''
