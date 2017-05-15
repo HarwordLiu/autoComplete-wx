@@ -1,12 +1,13 @@
 '.source.js':
   '发起网络请求':
-    'prefix': 'wxrequest'
+    'prefix': 'wx.request'
     'body': '''
     wx.request({
       url: 'https://${1:URL}',
-      data: {},
+      // data: {},
+      // header: {}, // 设置请求的 header , header 中不能设置 Referer
+      // dataType: 'json', // 默认为 json。如果设置了 dataType 为 json，则会尝试对响应的数据做一次 JSON.parse
       method: '${2:GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
       success: function(res){
         ${3}// success
       },
@@ -19,7 +20,7 @@
     })
     '''
   '上传文件':
-    'prefix': 'wxuploadFile'
+    'prefix': 'wx.uploadFile'
     'body': '''
     wx.uploadFile({
       url: 'https://String',
@@ -39,7 +40,7 @@
     })
     '''
   '下载文件':
-    'prefix': 'wxdownloadFile'
+    'prefix': 'wx.downloadFile'
     'body': '''
     wx.downloadFile({
       url: "https://URL",
@@ -57,7 +58,7 @@
     })
     '''
   '创建 WebSocket 连接':
-    'prefix': 'wxconnectSocket'
+    'prefix': 'wx.connectSocket'
     'body': '''
     wx.connectSocket({
       url: "wss://URL",
@@ -76,21 +77,21 @@
     })
     '''
   '监听 WebSocket 打开':
-    'prefix': 'wxonSocketOpen'
+    'prefix': 'wx.onSocketOpen'
     'body': '''
     wx.onSocketOpen(function() {
       // callback
     })
     '''
   '监听 WebSocket 错误':
-    'prefix': 'wxonSocketError'
+    'prefix': 'wx.onSocketError'
     'body': '''
     wx.onSocketError(function() {
       // callback
     })
     '''
   '发送 WebSocket 消息':
-    'prefix': 'wxsendSocketMessage'
+    'prefix': 'wx.sendSocketMessage'
     'body': '''
     wx.sendSocketMessage({
       data: 'String',
@@ -106,19 +107,19 @@
     })
     '''
   '接受 WebSocket 消息':
-    'prefix': 'wxonSocketMessage'
+    'prefix': 'wx.onSocketMessage'
     'body': '''
     wx.onSocketMessage(function(data) {
       // data
     })
     '''
   '关闭 WebSocket 连接':
-    'prefix': 'wxcloseSocket'
+    'prefix': 'wx.closeSocket'
     'body': '''
     wx.closeSocket()
     '''
   '监听 WebSocket 关闭':
-    'prefix': 'wxonSocketClose'
+    'prefix': 'wx.onSocketClose'
     'body': '''
     wx.onSocketClose(function() {
       // callback
