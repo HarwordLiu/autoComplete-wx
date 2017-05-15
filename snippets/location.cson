@@ -6,12 +6,35 @@
     type: '${1: wgs84}', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
     success: function(res){
       $2// success
+      var latitude = res.latitude
+      var longitude = res.longitude
+      var speed = res.speed
+      var accuracy = res.accuracy
     },
     fail: function() {
       $3// fail
     },
     complete: function() {
       $4// complete
+    }
+    })
+    '''
+  '打开地图选择位置':
+    'prefix': 'wxchooseLocation'
+    'body': '''
+    wx.chooseLocation({
+    success: function(res){
+      $1// success
+      var latitude = res.latitude
+      var longitude = res.longitude
+      var name = res.name
+      var address = res.address
+    },
+    fail: function() {
+      $2// fail
+    },
+    complete: function() {
+      $3// complete
     }
     })
     '''
@@ -34,4 +57,9 @@
         $6// complete
       }
     })
+    '''
+  '创建地图组件上下文':
+    'prefix': 'wxcreateMapContext'
+    'body': '''
+    wx.createMapContext('${1: mapID}')
     '''

@@ -1,6 +1,6 @@
 '.source.js':
   '从相册选择图片，或者拍照':
-    'prefix': 'wx.chooseImage'
+    'prefix': 'wxchooseImage'
     'body': '''
     wx.chooseImage({
       count: 9, // 最多可以选择的图片张数，默认9
@@ -18,7 +18,7 @@
     })
     '''
   '预览图片':
-    'prefix': 'wx.previewImage'
+    'prefix': 'wxpreviewImage'
     'body': '''
     wx.previewImage({
       // current: '${1:String}', // 当前显示图片的链接，不填则默认为 urls 的第一张
@@ -35,7 +35,7 @@
     })
     '''
   '获取图片信息':
-    'prefix': 'wx.getImageInfo'
+    'prefix': 'wxgetImageInfo'
     'body': '''
     wx.getImageInfo({
       src: '${1: String}', // 图片的路径，可以是相对路径，临时文件路径，存储文件路径，网络图片路径
@@ -51,7 +51,7 @@
     })
     '''
   '开始录音':
-    'prefix': 'wx.startRecord'
+    'prefix': 'wxstartRecord'
     'body': '''
     wx.startRecord({
       success: function(res){
@@ -71,7 +71,7 @@
     // }, 10000)
     '''
   '结束录音':
-    'prefix': 'wx.stopRecord'
+    'prefix': 'wxstopRecord'
     'body': '''
     wx.stopRecord({
       success: function(res){
@@ -86,7 +86,7 @@
     })
     '''
   '播放语音':
-    'prefix': 'wx.playVoice'
+    'prefix': 'wxplayVoice'
     'body': '''
     wx.playVoice({
       filePath: '${1: String}',
@@ -105,7 +105,7 @@
     // }, 5000)
     '''
   '暂停播放语音':
-    'prefix': 'wx.pauseVoice'
+    'prefix': 'wxpauseVoice'
     'body': '''
     wx.pauseVoice({
       success: function(res){
@@ -120,7 +120,7 @@
     })
     '''
   '结束播放语音':
-    'prefix': 'wx.stopVoice'
+    'prefix': 'wxstopVoice'
     'body': '''
     wx.stopVoice({
       success: function(res){
@@ -135,7 +135,7 @@
     })
     '''
   '获取音乐播放状态':
-    'prefix': 'wx.getBackgroundAudioPlayerState'
+    'prefix': 'wxgetBackgroundAudioPlayerState'
     'body': '''
     wx.getBackgroundAudioPlayerState({
       success: function(res){
@@ -156,12 +156,12 @@
     })
     '''
   '播放音乐':
-    'prefix': 'wx.playBackgroundAudio'
+    'prefix': 'wxplayBackgroundAudio'
     'body': '''
     wx.playBackgroundAudio({
-      dataUrl: '${1:String}',
-      title: '${2:String}',
-      coverImgUrl: '${3:String}',
+      dataUrl: '${1: String}',
+      title: '${2: String}',
+      coverImgUrl: '${3: String}',
       success: function(res){
         $4// success
       },
@@ -174,7 +174,7 @@
     })
     '''
   '暂停播放音乐':
-    'prefix': 'wx.pauseBackgroundAudio'
+    'prefix': 'wxpauseBackgroundAudio'
     'body': '''
     wx.pauseBackgroundAudio({
       success: function(res){
@@ -189,7 +189,7 @@
     })
     '''
   '控制音乐播放进度':
-    'prefix': 'wx.seekBackgroundAudio'
+    'prefix': 'wxseekBackgroundAudio'
     'body': '''
     wx.seekBackgroundAudio({
       position: ${1: Number},
@@ -205,7 +205,7 @@
     })
     '''
   '停止播放音乐':
-    'prefix': 'wx.stopBackgroundAudio'
+    'prefix': 'wxstopBackgroundAudio'
     'body': '''
     wx.stopBackgroundAudio({
       success: function(res){
@@ -220,33 +220,33 @@
     })
     '''
   '监听音乐开始播放':
-    'prefix': 'wx.onBackgroundAudioPlay'
+    'prefix': 'wxonBackgroundAudioPlay'
     'body': '''
     wx.onBackgroundAudioPlay(function() {
       $1// callback
     })
     '''
   '监听音乐暂停':
-    'prefix': 'wx.onBackgroundAudioPause'
+    'prefix': 'wxonBackgroundAudioPause'
     'body': '''
     wx.onBackgroundAudioPause(function() {
       $1// callback
     })
     '''
   '监听音乐结束':
-    'prefix': 'wx.onBackgroundAudioStop'
+    'prefix': 'wxonBackgroundAudioStop'
     'body': '''
     wx.onBackgroundAudioStop(function() {
       $1// callback
     })
     '''
   '获取音频上下文':
-    'prefix': 'wx.createAudioContext'
+    'prefix': 'wxcreateAudioContext'
     'body': '''
-    wx.createAudioContext('{$1:String}}')
+    wx.createAudioContext('{$1: audioID}}')
     '''
   '从相册选择视频，或者拍摄':
-    'prefix': 'wx.chooseVideo'
+    'prefix': 'wxchooseVideo'
     'body': '''
     wx.chooseVideo({
       sourceType: ['album', 'camera'], // album 从相册选视频，camera 使用相机拍摄
@@ -269,12 +269,12 @@
     })
     '''
     '获取视频上下文':
-      'prefix': 'wx.createVideoContext'
+      'prefix': 'wxcreateVideoContext'
       'body': '''
-      wx.createVideoContext('{$1:String}}')
+      wx.createVideoContext('{$1: videoID}}')
       '''
     '保存文件':
-      'prefix': 'wx.saveFile'
+      'prefix': 'wxsaveFile'
       'body': '''
       wx.saveFile({
         tempFilePath: '${1: String}',
@@ -291,7 +291,7 @@
       })
       '''
     '获取本地已保存的文件列表':
-      'prefix': 'wx.getSavedFileList'
+      'prefix': 'wxgetSavedFileList'
       'body': '''
       wx.getSavedFileList({
         success: function(res){
@@ -307,7 +307,7 @@
       })
       '''
     '获取本地已保存的文件信息':
-      'prefix': 'wx.getSavedFileInfo'
+      'prefix': 'wxgetSavedFileInfo'
       'body': '''
       wx.getSavedFileInfo({
         filePath: '{$1: String}',
@@ -324,7 +324,7 @@
       })
       '''
     '删除本地存储的文件':
-      'prefix': 'wx.removeSavedFile'
+      'prefix': 'wxremoveSavedFile'
       'body': '''
       wx.removeSavedFile({
         filePath: '{$1: String}',
@@ -341,7 +341,7 @@
       })
       '''
     '新开页面打开文档':
-      'prefix': 'wx.openDocument'
+      'prefix': 'wxopenDocument'
       'body': '''
       wx.openDocument({
         filePath: '{$1: String}',

@@ -1,9 +1,9 @@
 '.source.js':
-  '获取本地数据缓存':
+  '获取本地数据缓存异步':
     'prefix': 'wxgetStorage'
     'body': '''
     wx.getStorage({
-      key: '${1:String}',
+      key: '${1: String}',
       success: function(res){
         $2// success
       },
@@ -15,7 +15,28 @@
       }
     })
     '''
-  '设置本地数据缓存':
+  '获取本地数据缓存同步':
+    'prefix': 'wxgetStorageSync'
+    'body': '''
+    try {
+      var value = wx.getStorageSync('${1: String}')
+      if (value) {
+        // Do something with return value
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
+    '''
+  '写入本地数据缓存同步':
+    'prefix': 'wxsetStorageSync'
+    'body': '''
+    try {
+      wx.setStorageSync('${1: String}', '${2: String/Object}')
+    } catch (e) {
+
+    }
+    '''
+  '写入本地数据缓存异步':
     'prefix': 'wxsetStorage'
     'body': '''
     wx.setStorage({
@@ -32,7 +53,59 @@
       }
     })
     '''
-  '清理本地数据缓存':
+  '获取缓存信息异步':
+    'prefix': 'wxgetStorageInfo'
+    'body': '''
+    wx.getStorageInfo({
+      success: function(res){
+        $1// success
+        var keys = res.keys
+        var currentSize = res.currentSize
+        var limitSize = res.limitSize
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取缓存信息同步':
+    'prefix': 'wxgetStorageInfoSync'
+    'body': '''
+    try {
+      var res = wx.getStorageInfoSync()
+    } catch (e) {
+
+    }
+    '''
+  '从本地缓存中异步移除指定 key':
+    'prefix': 'wxremoveStorage'
+    'body': '''
+    wx.removeStorage({
+      key: '${1: String}',
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '从本地缓存中同步移除指定 key':
+    'prefix': 'wxremoveStorageSync'
+    'body': '''
+    try {
+      wx.removeStorageSync('${1: String}')
+    } catch (e) {
+
+    }
+    '''
+  '清理本地数据缓存异步':
     'prefix': 'wxclearStorage'
     'body': '''
     wx.clearStorage({
@@ -47,4 +120,13 @@
         $4// complete
       }
     })
+    '''
+  '清理本地数据缓存同步':
+    'prefix': 'wxclearStorageSync'
+    'body': '''
+    try {
+      wx.clearStorageSync('${1: String}')
+    } catch (e) {
+
+    }
     '''

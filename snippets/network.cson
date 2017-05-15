@@ -1,13 +1,13 @@
 '.source.js':
   '发起网络请求':
-    'prefix': 'wx.request'
+    'prefix': 'wxrequest'
     'body': '''
     wx.request({
-      url: 'https://${1:URL}',
+      url: 'https://${1: URL}',
       // data: {},
       // header: {}, // 设置请求的 header , header 中不能设置 Referer
       // dataType: 'json', // 默认为 json。如果设置了 dataType 为 json，则会尝试对响应的数据做一次 JSON.parse
-      method: '${2:GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: '${2: GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
         ${3}// success
       },
@@ -20,108 +20,108 @@
     })
     '''
   '上传文件':
-    'prefix': 'wx.uploadFile'
+    'prefix': 'wxuploadFile'
     'body': '''
     wx.uploadFile({
-      url: 'https://String',
-      filePath:'filePath',
-      name:'name',
+      url: 'https://${1: URL}',
+      filePath:'${2: String}',
+      name:'${3: String}',
       // header: {}, // 设置请求的 header
       // formData: {}, // HTTP 请求中其他额外的 form data
       success: function(res){
-        // success
+        $4// success
       },
       fail: function() {
-        // fail
+        $5// fail
       },
       complete: function() {
-        // complete
+        $6// complete
       }
     })
     '''
   '下载文件':
-    'prefix': 'wx.downloadFile'
+    'prefix': 'wxdownloadFile'
     'body': '''
     wx.downloadFile({
-      url: "https://URL",
+      url: "https://${1: URL}",
       // type: 'image', // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
       // header: {}, // 设置请求的 header
       success: function(res){
-        // success
+        $2// success
       },
       fail: function() {
-        // fail
+        $3// fail
       },
       complete: function() {
-        // complete
+        $4// complete
       }
     })
     '''
   '创建 WebSocket 连接':
-    'prefix': 'wx.connectSocket'
+    'prefix': 'wxconnectSocket'
     'body': '''
     wx.connectSocket({
-      url: "wss://URL",
-      data: {},
+      url: 'wss://${1: String}',
+      data: {${2: Object}},
       // header: {}, // 设置请求的 header
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: '${3: GET}', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function(res){
-        // success
+        $4// success
       },
       fail: function() {
-        // fail
+        $5// fail
       },
       complete: function() {
-        // complete
+        $6// complete
       }
     })
     '''
   '监听 WebSocket 打开':
-    'prefix': 'wx.onSocketOpen'
+    'prefix': 'wxonSocketOpen'
     'body': '''
     wx.onSocketOpen(function() {
-      // callback
+      $1// callback
     })
     '''
   '监听 WebSocket 错误':
     'prefix': 'wx.onSocketError'
     'body': '''
     wx.onSocketError(function() {
-      // callback
+      $1// callback
     })
     '''
   '发送 WebSocket 消息':
-    'prefix': 'wx.sendSocketMessage'
+    'prefix': 'wxsendSocketMessage'
     'body': '''
     wx.sendSocketMessage({
-      data: 'String',
+      data: '${1: String}',
       success: function(res){
-        // success
+        $2// success
       },
       fail: function() {
-        // fail
+        $3// fail
       },
       complete: function() {
-        // complete
+        $4// complete
       }
     })
     '''
   '接受 WebSocket 消息':
-    'prefix': 'wx.onSocketMessage'
+    'prefix': 'wxonSocketMessage'
     'body': '''
     wx.onSocketMessage(function(data) {
-      // data
+      $1// data
     })
     '''
   '关闭 WebSocket 连接':
-    'prefix': 'wx.closeSocket'
+    'prefix': 'wxcloseSocket'
     'body': '''
     wx.closeSocket()
     '''
   '监听 WebSocket 关闭':
-    'prefix': 'wx.onSocketClose'
+    'prefix': 'wxonSocketClose'
     'body': '''
     wx.onSocketClose(function() {
-      // callback
+      $1// callback
     })
     '''
