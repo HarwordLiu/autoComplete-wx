@@ -1,1 +1,46 @@
 '.source.js':
+  '初始化蓝牙适配器':
+    'prefix': 'wxopenBluetoothAdapter'
+    'body': '''
+    wx.openBluetoothAdapter({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '关闭蓝牙模块':
+    'prefix': 'wxcloseBluetoothAdapter'
+    'body': '''
+    wx.closeBluetoothAdapter({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取本机蓝牙适配器状态':
+    'prefix': 'wxgetBluetoothAdapterState'
+    'body': '''
+    wx.getBluetoothAdapterState({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
