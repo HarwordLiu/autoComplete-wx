@@ -8,7 +8,7 @@
   "activationCommands": {
     "atom-workspace": "auto-complete-wx:toggle"
   },
-  "repository": "https://github.com/atom/auto-complete-wx",
+  "repository": "https://github.com/HarwordLiu/autoComplete-wx.git",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
