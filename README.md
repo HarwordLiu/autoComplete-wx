@@ -4,6 +4,8 @@
 
 保持与微信同步更新！喜欢[GitHub](https://github.com/HarwordLiu/autoComplete-wx)给个小✨✨，这可是个辛苦活儿啊！
 
+诚然插件肯定还是会有一些未知的错误，如果发现问题请移步[issue](https://github.com/HarwordLiu/autoComplete-wx/issues/new)
+
 ### AutoComplete
 ![auto-complete-wx-1](https://raw.githubusercontent.com/HarwordLiu/README_Images/master/blog/auto-wx/1.gif)
 
