@@ -44,3 +44,208 @@
       }
     })
     '''
+  '监听蓝牙适配器状态变化事件':
+    'prefix': 'wxonBluetoothAdapterStateChange'
+    'body': '''
+    wx.onBluetoothAdapterStateChange(function(res) {
+      console.log(`adapterState changed, now is`, res)
+    })
+    '''
+  '开始搜寻附近的蓝牙外围设备':
+    'prefix': 'wxstartBluetoothDevicesDiscovery'
+    'body': '''
+    wx.startBluetoothDevicesDiscovery({
+      // services: ${1:UUIDArray},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '停止搜寻附近的蓝牙外围设备':
+    'prefix': 'wxstopBluetoothDevicesDiscovery'
+    'body': '''
+    wx.stopBluetoothDevicesDiscovery({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取所有已发现的蓝牙设备':
+    'prefix': 'wxgetBluetoothDevices'
+    'body': '''
+    wx.getBluetoothDevices({
+      // services: ${1:UUIDArray},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取所有已发现的蓝牙设备':
+    'prefix': 'wxgetConnectedBluetoothDevices'
+    'body': '''
+    wx.getConnectedBluetoothDevices({
+      services: ${1:UUIDArray},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '连接低功耗蓝牙设备':
+    'prefix': 'wxcreateBLEConnection'
+    'body': '''
+    wx.createBLEConnection({
+      deviceId: ${1:String},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '断开与低功耗蓝牙设备的连接':
+    'prefix': 'wxcloseBLEConnection'
+    'body': '''
+    wx.closeBLEConnection({
+      deviceId: ${1:String},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取蓝牙设备所有服务':
+    'prefix': 'wxgetBLEDeviceServices'
+    'body': '''
+    wx.getBLEDeviceServices({
+      deviceId: ${1:String},
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取蓝牙设备所有特征值':
+    'prefix': 'wxgetBLEDeviceCharacteristics'
+    'body': '''
+    wx.getBLEDeviceCharacteristics({
+      deviceId: ${1:String},
+      serviceId: ${2:String},
+      success: function(res){
+        $3// success
+      },
+      fail: function() {
+        $4// fail
+      },
+      complete: function() {
+        $5// complete
+      }
+    })
+    '''
+  '读取低功耗蓝牙设备的特征值的二进制数据值':
+    'prefix': 'wxreadBLECharacteristicValue'
+    'body': '''
+    wx.readBLECharacteristicValue({
+      deviceId: ${1:String},
+      serviceId: ${2:String},
+      characteristicId: ${3:String},
+      success: function(res){
+        $4// success
+      },
+      fail: function() {
+        $5// fail
+      },
+      complete: function() {
+        $6// complete
+      }
+    })
+    '''
+  '向低功耗蓝牙设备特征值中写入二进制数据':
+    'prefix': 'wxwriteBLECharacteristicValue'
+    'body': '''
+    wx.writeBLECharacteristicValue({
+      deviceId: ${1:String},
+      serviceId: ${2:String},
+      characteristicId: ${3:String},
+      value: ${4:ArrayBuffer},
+      success: function(res){
+        $5// success
+      },
+      fail: function() {
+        $6// fail
+      },
+      complete: function() {
+        $7// complete
+      }
+    })
+    '''
+  '启用低功耗蓝牙设备特征值变化时的 notify 功能':
+    'prefix': 'wxnotifyBLECharacteristicValueChange'
+    'body': '''
+    wx.notifyBLECharacteristicValueChange({
+      deviceId: ${1:String},
+      serviceId: ${2:String},
+      characteristicId: ${3:String},
+      state: ${4:boolean},
+      success: function(res){
+        $5// success
+      },
+      fail: function() {
+        $6// fail
+      },
+      complete: function() {
+        $7// complete
+      }
+    })
+    '''
+  '监听低功耗蓝牙连接的错误事件':
+    'prefix': 'wxonBLEConnectionStateChange'
+    'body': '''
+    wx.onBLEConnectionStateChange(function(res) {
+      $1
+    })
+    '''
+  '监听低功耗蓝牙设备的特征值变化':
+    'prefix': 'wxonBLECharacteristicValueChange'
+    'body': '''
+    wx.onBLECharacteristicValueChange(function(res) {
+      $1
+    })
+    '''

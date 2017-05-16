@@ -135,7 +135,7 @@
     'prefix': 'wxaddCard'
     'body': '''
     wx.addCard({
-      cardList: '${1:ObjectArray}', // 需要添加的卡券列表 { cardId: '', cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}' }
+      cardList: {${1:ObjectArray}}, // 需要添加的卡券列表 { cardId: '', cardExt: '{"code": "", "openid": "", "timestamp": "", "signature":""}' }
       success: function(res){
         $2// success
       },

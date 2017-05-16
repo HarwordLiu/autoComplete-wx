@@ -14,12 +14,6 @@
     '''
   '创建绘图上下文':
     'prefix': 'wxcreateContext'
-    'body': 'wx.createContext()'
-  '绘图':
-    'prefix': 'wxdrawCanvas'
     'body': '''
-    wx.drawCanvas({
-      canvasId: '${1:String}',
-      actions: actions
-    })
+    wx.createContext()
     '''
