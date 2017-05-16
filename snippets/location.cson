@@ -3,39 +3,39 @@
     'prefix': 'wxgetLocation'
     'body': '''
     wx.getLocation({
-    type: '${1:wgs84}', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-    success: function(res){
-      $2// success
-      var latitude = res.latitude
-      var longitude = res.longitude
-      var speed = res.speed
-      var accuracy = res.accuracy
-    },
-    fail: function() {
-      $3// fail
-    },
-    complete: function() {
-      $4// complete
-    }
+      type: '${1:wgs84}', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+      success: function(res){
+        $2// success
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
     })
     '''
   '打开地图选择位置':
     'prefix': 'wxchooseLocation'
     'body': '''
     wx.chooseLocation({
-    success: function(res){
-      $1// success
-      var latitude = res.latitude
-      var longitude = res.longitude
-      var name = res.name
-      var address = res.address
-    },
-    fail: function() {
-      $2// fail
-    },
-    complete: function() {
-      $3// complete
-    }
+      success: function(res){
+        $1// success
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var name = res.name
+        var address = res.address
+        },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
     })
     '''
   '打开内置地图':
