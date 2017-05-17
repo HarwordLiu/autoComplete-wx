@@ -1,4 +1,4 @@
-'*':
+'*.wxml':
   'View':
     'prefix': 'wxview'
     'body': '''
