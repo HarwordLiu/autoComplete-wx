@@ -1,7 +1,7 @@
 {
   "name": "auto-complete-wx",
   "main": "./lib/auto-complete-wx",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "微信语法支持高亮，API自动补全。保持与微信同步更新！喜欢GitHub给个小星星，这是个辛苦活儿啊！",
   "keywords": [],
   "activationCommands": {
