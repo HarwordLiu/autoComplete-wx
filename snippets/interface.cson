@@ -198,13 +198,13 @@
       }
     })
       '''
-    '将 ArrayBuffer 数据转成 Base64 字符串':
-      'prefix': 'wxarrayBufferToBase64'
-      'body': '''
-        wx.arrayBufferToBase64([${1:SringArray}])
-      '''
-    '将 Base64 字符串转成 ArrayBuffer 数据':
-      'prefix': 'wxarrayBufferToBase64'
-      'body': '''
-        wx.arrayBufferToBase64('${1:Base64}')
-      '''
+  '将 ArrayBuffer 数据转成 Base64 字符串':
+    'prefix': 'wxarrayBufferToBase64'
+    'body': '''
+      wx.arrayBufferToBase64([${1:SringArray}])
+    '''
+  '将 Base64 字符串转成 ArrayBuffer 数据':
+    'prefix': 'wxarrayBufferToBase64'
+    'body': '''
+      wx.arrayBufferToBase64('${1:Base64}')
+    '''

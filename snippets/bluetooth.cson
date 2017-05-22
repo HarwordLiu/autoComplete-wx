@@ -249,3 +249,63 @@
       $1
     })
     '''
+  '开始搜索附近的iBeacon设备':
+    'prefix': 'wxstartBeaconDiscovery'
+    'body': '''
+    wx.startBeaconDiscovery({
+      uuids: ['${1:ArrayString}'],
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+    '停止搜索附近的iBeacon设备':
+      'prefix': 'wxstopBeaconDiscovery'
+      'body': '''
+      wx.stopBeaconDiscovery({
+        success: function(res){
+          $1// success
+        },
+        fail: function() {
+          $2// fail
+        },
+        complete: function() {
+          $3// complete
+        }
+      })
+      '''
+    '获取所有已搜索到的iBeacon设备':
+      'prefix': 'wxgetBeacons'
+      'body': '''
+      wx.getBeacons({
+        success: function(res){
+          $1// success
+        },
+        fail: function() {
+          $2// fail
+        },
+        complete: function() {
+          $3// complete
+        }
+      })
+      '''
+    '监听 iBeacon 设备的更新事件':
+      'prefix': 'wxonBeaconUpdate'
+      'body': '''
+      wx.onBeaconUpdate(function(res) {
+        console.log(`iBeacon updated, now is`, res)
+      })
+      '''
+    '监听 iBeacon 服务的状态变化':
+      'prefix': 'wxonBeaconServiceChange'
+      'body': '''
+      wx.onBeaconUpdate(function(res) {
+        console.log(`iBeacon changed, now is`, res)
+      })
+      '''

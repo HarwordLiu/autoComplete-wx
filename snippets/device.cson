@@ -134,3 +134,170 @@
       }
     })
     '''
+  '获取用户的当前设置':
+    'prefix': 'wxgetSetting'
+    'body': '''
+    wx.getSetting({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '部分接口需要获得同意后才能调用':
+    'prefix': 'wxauthorize'
+    'body': '''
+    wx.authorize({
+      scope: '${1:String}', //可以从wxgetSetting获取
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '设置屏幕亮度':
+    'prefix': 'wxsetScreenBrightness'
+    'body': '''
+    wx.setScreenBrightness({
+      value: '${1:Number}', //可以从wxgetSetting获取
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取屏幕亮度':
+    'prefix': 'wxgetScreenBrightness'
+    'body': '''
+    wx.getScreenBrightness({
+      success: function() {
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取网络类型':
+    'prefix': 'wxgetNetworkType'
+    'body': '''
+    wx.getNetworkType({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '使手机发生较长时间的振动（400ms）':
+    'prefix': 'wxvibrateLong'
+    'body': '''
+    wx.vibrateLong({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '使手机发生较短时间的振动（15ms）':
+    'prefix': 'wxvibrateShort'
+    'body': '''
+    wx.vibrateShort({
+      success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '保存图片到系统相册，需要用户授权':
+    'prefix': 'wxsaveImageToPhotosAlbum'
+    'body': '''
+    wx.saveImageToPhotosAlbum({
+      filePath: '${1:String}', //图片文件路径，可以是临时文件路径也可以是永久文件路径
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '保存视频到系统相册，需要用户授权':
+    'prefix': 'wxsaveVideoToPhotosAlbum'
+    'body': '''
+    wx.saveVideoToPhotosAlbum({
+      filePath: '${1:String}', //视频文件路径，可以是临时文件路径也可以是永久文件路径
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '获取全局唯一的背景音频管理器':
+    'prefix': 'wxbackgroundAudioManager'
+    'body': '''
+    // backgroundAudioManager 方法属性列表 https://mp.weixin.qq.com/debug/wxadoc/dev/api/getBackgroundAudioManager.html
+    const backgroundAudioManager = wx.getBackgroundAudioManager()
+    '''
+  '把当前画布指定区域的内容导出生成指定大小的图片':
+    'prefix': 'wxcanvasToTempFilePath'
+    'body': '''
+    wx.canvasToTempFilePath({
+      x: ${1:Number},
+      y: ${2:Number},
+      width: ${3:Number},
+      height: ${4:Number},
+      destWidth: ${5:Number},
+      destHeight: ${6:Number},
+      canvasId: '${7:String}',
+      success: function(res) {
+        $8// success
+      },
+      fail: function() {
+        $9// fail
+      },
+      complete: function() {
+        $10// complete
+      }
+    })
+    '''

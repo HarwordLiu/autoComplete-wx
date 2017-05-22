@@ -43,7 +43,7 @@
     'prefix': 'wxdownloadFile'
     'body': '''
     wx.downloadFile({
-      url: "https://${1:URL}",
+      url: 'https://${1:URL}',
       // type: 'image', // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
       // header: {}, // 设置请求的 header
       success: function(res){

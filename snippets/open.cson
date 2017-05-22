@@ -131,6 +131,22 @@
       }
     })
     '''
+  '更新转发属性':
+    'prefix': 'wxupdateShareMenu'
+    'body': '''
+    wx.updateShareMenu({
+      withShareTicket: '${1:Bool}',
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
   '批量添加卡券':
     'prefix': 'wxaddCard'
     'body': '''
@@ -168,6 +184,23 @@
     'body': '''
     wx.openSetting({
       success: function(res){
+        $1// success
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '获取用户过去三十天微信运动步数':
+    'prefix': 'wxgetWeRunData'
+    'body': '''
+    wx.getWeRunData({
+      // 获取用户过去三十天微信运动步数，需要先调用 wx.login 接口。
+      success: function(res){
+        // 获取的为加密数据需要解密
         $1// success
       },
       fail: function() {
