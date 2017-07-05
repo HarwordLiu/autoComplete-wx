@@ -208,3 +208,38 @@
     'body': '''
       wx.arrayBufferToBase64('${1:Base64}')
     '''
+  '打开同一公众号下关联的另一个小程序':
+    'prefix': 'wxnavigateToMiniProgram'
+    'body': '''
+    wx.navigateToMiniProgram({
+      appId: ${1:String},
+      path: ${2:String},
+      extraData: {${3:Object}}, //	需要传递给目标小程序的数据
+      envVersion: ${4:String}, // develop（开发版），trial（体验版），release（正式版）
+      success: function(res){
+        $5// success
+      },
+      fail: function() {
+        $6// fail
+      },
+      complete: function() {
+        $7// complete
+      }
+    })
+    '''
+  '返回到上一个小程序':
+    'prefix': 'wxnavigateBackMiniProgram'
+    'body': '''
+    wx.navigateBackMiniProgram({
+      extraData: {${1:Object}}, //	需要传递给目标小程序的数据
+      success: function(res){
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
