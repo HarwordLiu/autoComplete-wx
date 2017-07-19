@@ -345,15 +345,16 @@
       'body': '''
       wx.openDocument({
         filePath: '{$1:String}',
+        fileType: '{$2:String}', //有效值 doc, xls, ppt, pdf, docx, xlsx, pptx
         success: function(res){
-          $2// success
+          $3// success
           console.log(res)
         },
         fail: function() {
-          $3// fail
+          $4// fail
         },
         complete: function() {
-          $4// complete
+          $5// complete
         }
       })
       '''

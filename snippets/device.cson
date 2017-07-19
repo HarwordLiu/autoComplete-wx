@@ -301,3 +301,67 @@
       }
     })
     '''
+  '获取文件信息':
+    'prefix': 'wxgetFileInfo'
+    'body': '''
+    wx.getFileInfo({
+      filePath: '${1:String}', //文件路径
+      digestAlgorithm: '${2:String}', //有效值：md5，sha1
+      success: function(res) {
+        $3// success
+        console.log(res)
+      },
+      fail: function() {
+        $4// fail
+      },
+      complete: function() {
+        $5// complete
+      }
+    })
+    '''
+  '监听用户主动截屏事件':
+    'prefix': 'wxonUserCaptureScreen'
+    'body': '''
+    wx.onUserCaptureScreen(function(res) {
+        console.log('用户截屏了')
+    })
+    '''
+  '将页面滚动到目标位置':
+    'prefix': 'wxpageScrollTo'
+    'body': '''
+    wx.pageScrollTo({
+      scrollTop: ${1:Number}
+    })
+    '''
+  '设置是否打开调试开关':
+    'prefix': 'wxsetEnableDebug'
+    'body': '''
+    wx.setEnableDebug({
+      enableDebug: '${1:Bool}',
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''
+  '设置是否保持常亮状态':
+    'prefix': 'wxsetKeepScreenOn'
+    'body': '''
+    wx.setKeepScreenOn({
+      keepScreenOn: '${1:Bool}',
+      success: function() {
+        $2// success
+      },
+      fail: function() {
+        $3// fail
+      },
+      complete: function() {
+        $4// complete
+      }
+    })
+    '''

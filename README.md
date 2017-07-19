@@ -4,7 +4,7 @@
 
 保持与微信同步更新！喜欢[GitHub](https://github.com/HarwordLiu/autoComplete-wx)给个小✨✨，这可是个辛苦活儿啊！
 
-[wx更新：2017.06.22 更新日志](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/new.html)
+[wx更新：1.4.0 基础库更新 更新日志](https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/new.html)
 
 诚然插件肯定还是会有一些未知的错误，如果发现问题请移步[issue](https://github.com/HarwordLiu/autoComplete-wx/issues/new)
 

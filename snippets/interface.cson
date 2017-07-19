@@ -243,3 +243,24 @@
       }
     })
     '''
+  '显示消息提示框':
+    'prefix': 'wxsetNavigationBarColor'
+    'body': '''
+    wx.setNavigationBarColor({
+      frontColor: '${1:String}', //仅支持 #ffffff 和 #000000
+      backgroundColor: '${2:success}', //有效值为十六进制颜色
+      animation: {
+          duration: ${3:Number},
+          timingFunc: '${4:String}' // 有效值 linear easeIn easeOut easeInOut
+        },
+      success: function(res){
+        $5// success
+      },
+      fail: function() {
+        $6// fail
+      },
+      complete: function() {
+        $7// complete
+      }
+    })
+    '''
