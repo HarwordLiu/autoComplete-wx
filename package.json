@@ -2,7 +2,7 @@
   "name": "auto-complete-wx",
   "main": "./lib/auto-complete-wx",
   "version": "0.11.0",
-  "description": "微信语法支持高亮，API自动补全。保持与微信同步更新！喜欢GitHub给个小星星，这是个辛苦活儿啊！",
+  "description": "微信语法支持高亮，API自动补全。wx更新：1.5.0 基础库更新 2017.08.18 喜欢GitHub给个小星星，这是个辛苦活儿啊！",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": "auto-complete-wx:toggle"

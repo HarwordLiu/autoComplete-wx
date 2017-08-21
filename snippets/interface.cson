@@ -177,7 +177,23 @@
       $1
     }
     '''
-  '停止下拉刷新动画':
+  '开始下拉刷新，效果与用户手动下拉刷新一致':
+    'prefix': 'wxstartPullDownRefresh'
+    'body': '''
+    wx.startPullDownRefresh({
+      success: function(res) {
+        $1// success
+        console.log(res)
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
+  '停止当前页面下拉刷新':
     'prefix': 'wxstopPullDownRefresh'
     'body': '''
     wx.stopPullDownRefresh()

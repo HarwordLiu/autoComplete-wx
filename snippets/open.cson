@@ -212,3 +212,19 @@
       }
     })
     '''
+  '选择用户的发票抬头':
+    'prefix': 'wxchooseInvoiceTitle'
+    'body': '''
+    wx.chooseInvoiceTitle({
+      success: function(res) {
+        $1// success
+        console.log(res)
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''

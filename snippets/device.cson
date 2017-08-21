@@ -365,3 +365,21 @@
       }
     })
     '''
+  '获取本机支持的 SOTER 生物认证方式':
+    'prefix': 'wxcheckIsSupportSoterAuthentication'
+    'body': '''
+    wx.checkIsSupportSoterAuthentication({
+      success: function(res){
+        $1// success
+        // res.supportMode = [] 不具备任何被SOTER支持的生物识别方式
+        // res.supportMode = ['fingerPrint'] 只支持指纹识别
+        // res.supportMode = ['fingerPrint', 'facial', 'speech'] 支持指纹识别，人脸识别和声纹识别
+      },
+      fail: function() {
+        $2// fail
+      },
+      complete: function() {
+        $3// complete
+      }
+    })
+    '''
