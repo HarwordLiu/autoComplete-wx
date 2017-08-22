@@ -1,4 +1,4 @@
-# auto-complete-wx package
+# autocomplete-wx package
 
 微信语法支持高亮，API自动补全。
 
