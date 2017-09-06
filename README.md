@@ -9,15 +9,15 @@
 诚然插件肯定还是会有一些未知的错误，如果发现问题请移步[issue](https://github.com/HarwordLiu/autoComplete-wx/issues/new)
 
 ### AutoComplete
-![auto-complete-wx-1](https://raw.githubusercontent.com/HarwordLiu/README_Images/master/blog/auto-wx/1.gif)
+![auto-complete-wx-1](http://orsg2lmcy.bkt.clouddn.com/auto-wx-1.gif)
 
 ### Grammars Highlight
 
-![auto-complete-wx-2](https://raw.githubusercontent.com/HarwordLiu/README_Images/master/blog/auto-wx/2.png)
+![auto-complete-wx-2](http://orsg2lmcy.bkt.clouddn.com/auto-wx-2.png)
 
-![auto-complete-wx-3](https://raw.githubusercontent.com/HarwordLiu/README_Images/master/blog/auto-wx/3.png)
+![auto-complete-wx-3](http://orsg2lmcy.bkt.clouddn.com/auto-wx-3.png)
 
-![auto-complete-wx-4](https://raw.githubusercontent.com/HarwordLiu/README_Images/master/blog/auto-wx/4.png)
+![auto-complete-wx-4](http://orsg2lmcy.bkt.clouddn.com/auto-wx-4.png)
 
 #### PS
 
